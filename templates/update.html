@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}update{% endblock title %}
+{% block body %}
+<div class="container my-5">
+    <div class="container">
+        <h3 class="text-center mb-3">
+            <p style="color: rgb(62, 46, 234);"><U>Update Todo</U></p>
+        </h3>
+        <form action="/update/{{todo.sno}}" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">ToDo Title</label>
+                <input type="text" class="form-control" name="title" value="{{todo.title}}" id="title" aria-describedby="text" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" value="{{todo.description}}" name="description" id="description">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" name="important" id="importantCheck">
+                <label class="form-check-label" for="importantCheck">Important</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="atomic"></script>
+
+{% endblock body %}
