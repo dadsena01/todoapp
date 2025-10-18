@@ -9,14 +9,17 @@
         <form action="/update/{{todo.sno}}" method="POST">
             <div class="mb-3">
                 <label for="title" class="form-label">ToDo Title</label>
-                <input type="text" class="form-control" name="title" value="{{todo.title}}" id="title" aria-describedby="text" required>
+                <input type="text" class="form-control" name="title" value="{{todo.title}}" id="title"
+                    aria-describedby="text" required>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <input type="text" class="form-control" value="{{todo.description}}" name="description" id="description">
+                <input type="text" class="form-control" value="{{todo.description}}" name="description"
+                    id="description">
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" value="{{todo.important}}" name="important" id="importantCheck">
+                <input type="checkbox" class="form-check-input" name="important" id="importantCheck" {% if
+                    todo.important %}checked{% endif %}>
                 <label class="form-check-label" for="importantCheck">Important</label>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>

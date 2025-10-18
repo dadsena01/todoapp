@@ -5,7 +5,7 @@
         <div class="card mb-4">
             <div class="container">
                 <h3 class="text-center mb-3">
-                    <p style="color: rgb(62, 46, 234);">Add Todo's</p>
+                    <p style="color: rgb(62, 46, 234);">Add Todos</p>
                 </h3>
                 <form action="/" method="POST">
                     <div class="mb-3">
@@ -54,7 +54,7 @@
                     <td>{{todo.title}}</td>
                     <td>{{todo.description}}</td>
                     <td>{% if todo.important %}⭐{% else %}-{% endif %}</td>
-                    <td>{{todo.date_created}}</td>
+                    <td>{{ todo.date_created.strftime('%d %b %Y, %I:%M %p') }}</td>
                     <td>
                         <a href="update/{{todo.sno}}" button type="button"
                             class="btn btn-outline-success btn-sm mx-1">Update</button>
